@@ -5,6 +5,8 @@
  */
 package universidad;
 
+import Modules.ModuleMain.ModuleMain;
+
 /**
  *
  * @author FANNY BELTRAN
@@ -16,6 +18,8 @@ public class Universidad {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ModuleMain module = new ModuleMain();
+        module.setVisible(true);
     }
-    
+
 }
