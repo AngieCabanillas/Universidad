@@ -229,13 +229,16 @@ public class ModuleMain extends javax.swing.JFrame {
 
         try {
             PreparedStatement ps = null;
-            ps = bd.getConexion().prepareStatement("INSERT INTO `users` VALUES (?,?,?,?)");
-            ps.setString(1, code);
-            ps.setString(2, name);
-            ps.setString(3, lastname);
-            ps.setString(4, phone);
+            ps = bd.getConexion().prepareStatement("INSERT INTO `users` VALUES (?,?,?,?,?)");
+            ps.setInt(1, 0);
+            ps.setString(2, code);
+            ps.setString(3, name);
+            ps.setString(4, lastname);
+            ps.setString(5, phone);
             ps.executeUpdate();
             ps.close();
+
+            btn_clear.doClick();
 
             JOptionPane.showMessageDialog(null, "Created user");
         } catch (Exception e) {
@@ -253,6 +256,11 @@ public class ModuleMain extends javax.swing.JFrame {
 
     private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_clearActionPerformed
         // TODO add your handling code here:
+
+        txt_code.setText("");
+        txt_name.setText("");
+        txt_lastname.setText("");
+        txt_phone.setText("");
     }// GEN-LAST:event_btn_clearActionPerformed
 
     /**
