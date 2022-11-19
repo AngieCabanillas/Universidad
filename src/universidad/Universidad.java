@@ -20,6 +20,7 @@ public class Universidad {
         // TODO code application logic here
         ModuleMain module = new ModuleMain();
         module.setVisible(true);
+        module.setLocationRelativeTo(null);
     }
 
 }
