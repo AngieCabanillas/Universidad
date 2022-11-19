@@ -80,7 +80,6 @@ public class ModuleMain extends javax.swing.JFrame {
         btn_create.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_createActionPerformed(evt);
-                // Create user
             }
         });
 
@@ -215,6 +214,7 @@ public class ModuleMain extends javax.swing.JFrame {
 
     private void btn_createActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_createActionPerformed
         // TODO add your handling code here:
+        // Test comment
     }// GEN-LAST:event_btn_createActionPerformed
 
     private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_updateActionPerformed
