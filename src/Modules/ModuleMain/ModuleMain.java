@@ -8,6 +8,8 @@ package Modules.ModuleMain;
 import Connection.BD;
 import java.sql.*;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author FANNY BELTRAN
@@ -234,8 +236,10 @@ public class ModuleMain extends javax.swing.JFrame {
             ps.setString(4, phone);
             ps.executeUpdate();
             ps.close();
+
+            JOptionPane.showMessageDialog(null, "Created user");
         } catch (Exception e) {
-            System.out.println("Error: " + e);
+            JOptionPane.showMessageDialog(null, "Error: " + e);
         }
     }// GEN-LAST:event_btn_createActionPerformed
 
