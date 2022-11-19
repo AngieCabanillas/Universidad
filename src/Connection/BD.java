@@ -14,7 +14,7 @@ import java.sql.DriverManager;
  */
 public class BD {
 
-    public static final String URL = "jdbc:mysql://localhost:3306/pruebajava";
+    public static final String URL = "jdbc:mysql://localhost:3306/universidad";
     public static final String USER = "root";
     public static final String CLAVE = "";
 
