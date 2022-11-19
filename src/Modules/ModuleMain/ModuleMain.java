@@ -248,6 +248,26 @@ public class ModuleMain extends javax.swing.JFrame {
 
     private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_updateActionPerformed
         // TODO add your handling code here:
+        
+        String code = txt_code.getText();
+        String name = txt_name.getText();
+        String lastname = txt_lastname.getText();
+        String phone = txt_phone.getText();
+        
+        try {
+            PreparedStatement ps = null;
+            ps = bd.getConexion().prepareStatement("UPDATE `users` SET name=?, lastname=?, phone=? WHERE code=?");
+            ps.setString(1, name);
+            ps.setString(2, lastname);
+            ps.setString(3, phone);
+            ps.setString(4, code);
+            ps.executeUpdate();
+            ps.close();
+
+            JOptionPane.showMessageDialog(null, "Updated user");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e);
+        }
     }// GEN-LAST:event_btn_updateActionPerformed
 
     private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_deleteActionPerformed
