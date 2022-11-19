@@ -268,10 +268,26 @@ public class ModuleMain extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error: " + e);
         }
+        
     }// GEN-LAST:event_btn_updateActionPerformed
 
     private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_deleteActionPerformed
         // TODO add your handling code here:
+        
+        String code = txt_code.getText();
+        
+        try {
+            PreparedStatement ps = null;
+            ps = bd.getConexion().prepareStatement("DELETE FROM users WHERE code=?");
+            ps.setString(1, code);
+            ps.executeUpdate();
+            ps.close();
+
+            JOptionPane.showMessageDialog(null, "Deleted user");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e);
+        }
+        
     }// GEN-LAST:event_btn_deleteActionPerformed
 
     private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_clearActionPerformed
