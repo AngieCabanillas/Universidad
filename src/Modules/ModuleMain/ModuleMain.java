@@ -5,6 +5,9 @@
  */
 package Modules.ModuleMain;
 
+import Connection.BD;
+import java.sql.*;
+
 /**
  *
  * @author FANNY BELTRAN
@@ -212,9 +215,28 @@ public class ModuleMain extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    BD bd = new BD();
+
     private void btn_createActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_createActionPerformed
         // TODO add your handling code here:
-        // Test comment
+
+        String code = txt_code.getText();
+        String name = txt_name.getText();
+        String lastname = txt_lastname.getText();
+        String phone = txt_phone.getText();
+
+        try {
+            PreparedStatement ps = null;
+            ps = bd.getConexion().prepareStatement("INSERT INTO `users` VALUES (?,?,?,?)");
+            ps.setString(1, code);
+            ps.setString(2, name);
+            ps.setString(3, lastname);
+            ps.setString(4, phone);
+            ps.executeUpdate();
+            ps.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
     }// GEN-LAST:event_btn_createActionPerformed
 
     private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_updateActionPerformed
